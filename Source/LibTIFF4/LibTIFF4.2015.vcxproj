@@ -22,6 +22,7 @@
     <ProjectGuid>{34108409-49A9-496F-8402-908F98D56DD6}</ProjectGuid>
     <RootNamespace>LibTIFF4</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>LibTIFF4</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

@@ -22,6 +22,7 @@
     <ProjectGuid>{0A68456A-C176-4FBD-82F3-33ACF500C392}</ProjectGuid>
     <RootNamespace>LibWebP</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>LibWebP</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
