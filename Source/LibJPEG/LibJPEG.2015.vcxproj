@@ -39,7 +39,7 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
@@ -69,7 +69,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -82,6 +84,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -104,6 +107,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -111,6 +115,65 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="jconfig.h" />
+    <ClInclude Include="jdct.h" />
+    <ClInclude Include="jerror.h" />
+    <ClInclude Include="jinclude.h" />
+    <ClInclude Include="jmemsys.h" />
+    <ClInclude Include="jmorecfg.h" />
+    <ClInclude Include="jpegint.h" />
+    <ClInclude Include="jpeglib.h" />
+    <ClInclude Include="jversion.h" />
+    <ClInclude Include="transupp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="jaricom.c" />
+    <ClCompile Include="jcapimin.c" />
+    <ClCompile Include="jcapistd.c" />
+    <ClCompile Include="jcarith.c" />
+    <ClCompile Include="jccoefct.c" />
+    <ClCompile Include="jccolor.c" />
+    <ClCompile Include="jcdctmgr.c" />
+    <ClCompile Include="jchuff.c" />
+    <ClCompile Include="jcinit.c" />
+    <ClCompile Include="jcmainct.c" />
+    <ClCompile Include="jcmarker.c" />
+    <ClCompile Include="jcmaster.c" />
+    <ClCompile Include="jcomapi.c" />
+    <ClCompile Include="jcparam.c" />
+    <ClCompile Include="jcprepct.c" />
+    <ClCompile Include="jcsample.c" />
+    <ClCompile Include="jctrans.c" />
+    <ClCompile Include="jdapimin.c" />
+    <ClCompile Include="jdapistd.c" />
+    <ClCompile Include="jdarith.c" />
+    <ClCompile Include="jdatadst.c" />
+    <ClCompile Include="jdatasrc.c" />
+    <ClCompile Include="jdcoefct.c" />
+    <ClCompile Include="jdcolor.c" />
+    <ClCompile Include="jddctmgr.c" />
+    <ClCompile Include="jdhuff.c" />
+    <ClCompile Include="jdinput.c" />
+    <ClCompile Include="jdmainct.c" />
+    <ClCompile Include="jdmarker.c" />
+    <ClCompile Include="jdmaster.c" />
+    <ClCompile Include="jdmerge.c" />
+    <ClCompile Include="jdpostct.c" />
+    <ClCompile Include="jdsample.c" />
+    <ClCompile Include="jdtrans.c" />
+    <ClCompile Include="jerror.c" />
+    <ClCompile Include="jfdctflt.c" />
+    <ClCompile Include="jfdctfst.c" />
+    <ClCompile Include="jfdctint.c" />
+    <ClCompile Include="jidctflt.c" />
+    <ClCompile Include="jidctfst.c" />
+    <ClCompile Include="jidctint.c" />
+    <ClCompile Include="jmemmgr.c" />
+    <ClCompile Include="jmemnobs.c" />
+    <ClCompile Include="jquant1.c" />
+    <ClCompile Include="jquant2.c" />
+    <ClCompile Include="jutils.c" />
+    <ClCompile Include="transupp.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

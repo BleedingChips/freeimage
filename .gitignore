@@ -87,3 +87,9 @@ $RECYCLE.BIN/
 .suo
 *.db
 *.opendb
+*.log
+*.idb
+*.pdb
+*.tlog
+*.lastbuildstate
+
