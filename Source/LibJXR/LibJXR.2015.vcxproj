@@ -39,13 +39,13 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -69,7 +69,13 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetExt>.lib</TargetExt>
+    <IncludePath>$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -82,6 +88,8 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>./image/sys;./jxrgluelib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;DISABLE_PERF_MEASUREMENT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -104,6 +112,8 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>./image/sys;./jxrgluelib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;DISABLE_PERF_MEASUREMENT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -111,6 +121,49 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="common\include\guiddef.h" />
+    <ClInclude Include="common\include\wmsal.h" />
+    <ClInclude Include="common\include\wmspecstring.h" />
+    <ClInclude Include="common\include\wmspecstrings_adt.h" />
+    <ClInclude Include="common\include\wmspecstrings_strict.h" />
+    <ClInclude Include="common\include\wmspecstrings_undef.h" />
+    <ClInclude Include="image\decode\decode.h" />
+    <ClInclude Include="image\encode\encode.h" />
+    <ClInclude Include="image\sys\ansi.h" />
+    <ClInclude Include="image\sys\common.h" />
+    <ClInclude Include="image\sys\perfTimer.h" />
+    <ClInclude Include="image\sys\strcodec.h" />
+    <ClInclude Include="image\sys\strTransform.h" />
+    <ClInclude Include="image\sys\windowsmediaphoto.h" />
+    <ClInclude Include="image\sys\xplatform_image.h" />
+    <ClInclude Include="image\x86\x86.h" />
+    <ClInclude Include="jxrgluelib\JXRGlue.h" />
+    <ClInclude Include="jxrgluelib\JXRMeta.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="image\decode\decode.c" />
+    <ClCompile Include="image\decode\JXRTranscode.c" />
+    <ClCompile Include="image\decode\postprocess.c" />
+    <ClCompile Include="image\decode\segdec.c" />
+    <ClCompile Include="image\decode\strdec.c" />
+    <ClCompile Include="image\decode\strdec_x86.c" />
+    <ClCompile Include="image\decode\strInvTransform.c" />
+    <ClCompile Include="image\decode\strPredQuantDec.c" />
+    <ClCompile Include="image\encode\encode.c" />
+    <ClCompile Include="image\encode\segenc.c" />
+    <ClCompile Include="image\encode\strenc.c" />
+    <ClCompile Include="image\encode\strenc_x86.c" />
+    <ClCompile Include="image\encode\strFwdTransform.c" />
+    <ClCompile Include="image\encode\strPredQuantEnc.c" />
+    <ClCompile Include="image\sys\adapthuff.c" />
+    <ClCompile Include="image\sys\image.c" />
+    <ClCompile Include="image\sys\strcodec.c" />
+    <ClCompile Include="image\sys\strPredQuant.c" />
+    <ClCompile Include="image\sys\strTransform.c" />
+    <ClCompile Include="jxrgluelib\JXRGlue.c" />
+    <ClCompile Include="jxrgluelib\JXRGlueJxr.c" />
+    <ClCompile Include="jxrgluelib\JXRGluePFC.c" />
+    <ClCompile Include="jxrgluelib\JXRMeta.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
