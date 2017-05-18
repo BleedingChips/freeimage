@@ -13,5 +13,69 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\internal">
+      <UniqueIdentifier>{459dce4a-f804-4197-ae3c-87c7a6dee90d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\libraw">
+      <UniqueIdentifier>{4caca35a-1a71-43ac-b2f1-bce1aabf1a1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\internal">
+      <UniqueIdentifier>{dd899fef-bff7-4a49-a8fd-85183d6f0e6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\libraw">
+      <UniqueIdentifier>{d4a9532a-85ae-407d-b71e-f9866285f317}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="internal\defines.h">
+      <Filter>Header Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="internal\libraw_internal_funcs.h">
+      <Filter>Header Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="internal\var_defines.h">
+      <Filter>Header Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="libraw\libraw.h">
+      <Filter>Header Files\libraw</Filter>
+    </ClInclude>
+    <ClInclude Include="libraw\libraw_alloc.h">
+      <Filter>Header Files\libraw</Filter>
+    </ClInclude>
+    <ClInclude Include="libraw\libraw_const.h">
+      <Filter>Header Files\libraw</Filter>
+    </ClInclude>
+    <ClInclude Include="libraw\libraw_datastream.h">
+      <Filter>Header Files\libraw</Filter>
+    </ClInclude>
+    <ClInclude Include="libraw\libraw_internal.h">
+      <Filter>Header Files\libraw</Filter>
+    </ClInclude>
+    <ClInclude Include="libraw\libraw_types.h">
+      <Filter>Header Files\libraw</Filter>
+    </ClInclude>
+    <ClInclude Include="libraw\libraw_version.h">
+      <Filter>Header Files\libraw</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="internal\demosaic_packs.cpp">
+      <Filter>Source Files\internal</Filter>
+    </ClCompile>
+    <ClCompile Include="internal\dcraw_fileio.cpp">
+      <Filter>Source Files\internal</Filter>
+    </ClCompile>
+    <ClCompile Include="internal\dcraw_common.cpp">
+      <Filter>Source Files\internal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libraw_c_api.cpp">
+      <Filter>Source Files\libraw</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libraw_cxx.cpp">
+      <Filter>Source Files\libraw</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libraw_datastream.cpp">
+      <Filter>Source Files\libraw</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
