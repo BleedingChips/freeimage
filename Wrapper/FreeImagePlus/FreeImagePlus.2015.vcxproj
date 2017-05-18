@@ -91,6 +91,10 @@
       <AdditionalIncludeDirectories>.;../../Source;</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_WINDLL;_DEBUG;WIN32;_WINDOWS;_USRDLL;FIP_EXPORTS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>LibJPEG.lib;LibJXR.lib;LibOpenJPEG.lib;LibPNG.lib;LibRaw.lib;LibTIFF4.lib;LibWebP.lib;OpenEXR.lib;ZLib.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -119,6 +123,8 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>LibJPEG.lib;LibJXR.lib;LibOpenJPEG.lib;LibPNG.lib;LibRaw.lib;LibTIFF4.lib;LibWebP.lib;OpenEXR.lib;ZLib.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
