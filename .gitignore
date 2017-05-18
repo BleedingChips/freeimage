@@ -92,4 +92,7 @@ $RECYCLE.BIN/
 *.pdb
 *.tlog
 *.lastbuildstate
-
+*.user
+*.aps
+*.res
+*.exp
